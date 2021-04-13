@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h2>Tasks</h2>
+<hr>
+  <% @user_categories.each do |user_category| %>
+    
+      <% @user_category_tasks = user_category.tasks %>
+      <% @user_category_tasks.each do | user_category_task | %>
+        <p><i><%= user_category_task.deadline %></i></p>
+          <h3 style="display:inline;"><%= user_category_task.title %></h3>
+          <h5 style="display:inline;"> <%= user_category.name%> </h5>
+        <br><br>
+        <p><%= user_category_task.content %></p>
+        <p>
+          <%= link_to 'Details', user_category_task %>
+          <%= link_to 'Edit', edit_task_path(user_category_task) %>
+          <%= link_to 'Delete', user_category_task, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </p>
+      <hr>
+      <% end %>
+  <% end %>
+
+<br>
+
+<%= link_to 'New Task', new_task_path %>

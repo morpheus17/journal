@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Categories</h1>
+
+<hr>
+
+<% @categories.each do |category| %>
+    
+  <p><i><%= category.color %></i></p>
+  <h3 style="display:inline;"><%= category.name %></h3>
+  <br><br>
+  <p><%= category.description %></p>
+  <p>
+          <%= link_to 'Details', category %>
+          <%= link_to 'Edit', edit_task_path(category) %>
+          <%= link_to 'Delete', category, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </p>
+      <hr>
+      
+<% end %>
+
+
+
+<br>
+
+<%= link_to 'New Category', new_category_path %>

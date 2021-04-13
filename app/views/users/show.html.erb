@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+
+
+<br><br>
+<div class="row">
+  <div class="offset-4 col-md-6">
+      <h3 class='text-center'>
+        <strong>User Profile</strong>
+      </h3>
+      <hr><br>
+      <h3 class='text-left'>
+        <strong>Name:</strong>
+        <%= @user.name %>
+      </h3>
+      <br>
+      <h3 class='text-left'>
+        <strong>Email:</strong>
+        <%= @user.email %>
+      </h3>
+      <br>
+      <h3 class='text-left'>
+        <strong>Created at</strong>
+        <%= @user.created_at %>
+      </h3>
+      <br>
+      <h3 class='text-left'>
+        <strong>Updated at</strong>
+        <%= @user.updated_at %>
+      </h3>
+      <br>
+      <h3 class='text-center'>
+        <%= link_to 'Edit', edit_user_path(@user) %> |
+        <%= link_to 'Back', root_path %>
+      </h3>
+  </div>
+</div>
